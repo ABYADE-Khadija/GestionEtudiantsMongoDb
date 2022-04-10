@@ -13,9 +13,13 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.DBObjectCodec;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoException;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.result.DeleteResult;
 
 import metier.*;
 
@@ -96,6 +100,22 @@ public  class SelectService {
             System.out.println(e);
 		}
 		return etudiantsL;
+	}
+	
+	public static long deleteStudent(String no_etud) {
+		 MongoClient mongo = new MongoClient( "localhost" , 27017 );
+	      MongoDatabase database = mongo.getDatabase("scolarite");
+	      MongoCollection<Document> etudiants = database.getCollection("etudiants");
+	      long deletedCount = 0;
+	      try {
+           DeleteResult result = etudiants.deleteOne(Filters.eq("no_etud",no_etud));
+           deletedCount = result.getDeletedCount();
+           System.out.println("Deleted document count: " + deletedCount);
+       } catch (MongoException err) {
+           System.err.println("Unable to delete due to an error: " + err);
+       }
+		return deletedCount;
+
 	}
 	
 	
