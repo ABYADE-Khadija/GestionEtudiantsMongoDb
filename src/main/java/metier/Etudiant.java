@@ -27,6 +27,14 @@ public class Etudiant {
 		this.dat_nais = dat_nais;
 		this.notes = notes;
 	}
+	public Etudiant(String nom, String adresse, String dat_nais, ArrayList<Note> notes) {
+		super();
+		this.no_etud = no_etud;
+		this.nom = nom;
+		this.adresse = adresse;
+		this.dat_nais = dat_nais;
+		this.notes = notes;
+	}
 	
 	
 	public Etudiant() {

@@ -40,8 +40,7 @@ public  class SelectService {
 	      document.append("dat_nais",etu.getDat_nais());
 	      
 	      Collection<Document> listNotes= new ArrayList<Document>();
-	      
-	      
+	     
 	      for (Note no : etu.getNotes()) {
 	    	  Document doc = new Document();
 		      doc.append("matiere",no.getMatiere() );
