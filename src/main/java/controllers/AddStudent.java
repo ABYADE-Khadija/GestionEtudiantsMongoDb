@@ -1,4 +1,4 @@
-package dbconfig;
+package controllers;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,13 +16,13 @@ import metier.Note;
  * Servlet implementation class servlete
  */
 @WebServlet("/servlete")
-public class servlete extends HttpServlet {
+public class AddStudent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public servlete() {
+    public AddStudent() {
         super();
         // TODO Auto-generated constructor stub
     }

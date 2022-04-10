@@ -10,12 +10,24 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
-  <servlet>
-        <servlet-name>servlete</servlet-name>
-        <servlet-class>dbconfig.servlete</servlet-class>
+    <servlet>
+        <servlet-name>AddStudent</servlet-name>
+        <servlet-class>controllers.AddStudent</servlet-class>
     </servlet>
+    
+    <servlet>
+        <servlet-name>DeleteStudent</servlet-name>
+        <servlet-class>controllers.DeleteStudent</servlet-class>
+    </servlet>
+    
     <servlet-mapping>
-        <servlet-name>servlete</servlet-name>
+        <servlet-name>AddStudent</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+        
+    <servlet-mapping>
+        <servlet-name>DeleteStudent</servlet-name>
         <url-pattern>/app</url-pattern>
     </servlet-mapping>
+    
 </web-app>
